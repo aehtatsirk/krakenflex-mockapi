@@ -15,7 +15,7 @@ export default fp<FastifyDynamicSwaggerOptions>(async (fastify) => {
         version: "0.1.0",
       },
       externalDocs: {
-        url: "https://github.com/aehtatsirk",
+        url: "https://github.com/aehtatsirk/krakenflex-mockapi/blob/main/README.md",
         description: "Find more info here",
       },
       host: "127.0.0.1:3000",
