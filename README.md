@@ -1,7 +1,10 @@
+
 # KrakenFlex Back End Test
 
 - This project is bootstrapped with [Fastify-CLI](https://www.npmjs.com/package/fastify-cli) using ESM, Typescript, and Standard Linter
-  `fastify generate <app> --esm --lang=ts --standardlint`
+
+      fastify generate <app> --esm --lang=ts --standardlint
+
 - Used `json-schema-to-ts` to validate & type routes & swagger
 - Auto-generated Swagger UI: `http://localhost:3000/docs` (production ready)
 - Use `tap` and `axios-mock-adapter` to test and mock requests
@@ -22,11 +25,11 @@ Once a valid API key is logged, you can view in the [Swagger UI](http://localhos
 1. `GET /outages` which returns all outages
 2. `GET /site-info/{siteId}` which returns specific information about a site
 3. `POST /site-outages/{siteId}` which expects outages for a specific site to be posted to it
-   a. Retrieves `GET /outages`
-   b. Retrieves information from the `GET /site-info/{siteId}` using the `siteId` parameter from the swagger: eg:`norwich-pear-tree`
-   c. Filters out any `/outages` that began before `2022-01-01T00:00:00.000Z` or don't have an ID that is in the list of devices in the `/site-info/{siteId}` information
-   d. For the remaining outages, it should attach the display `name` of the device in the `/site-info/{siteId}` information to each appropriate `outage`
-   e. Sends this list of outages to `POST /site-outages/{siteId}` for the site with the `siteId`parameter in the swagger
+   - Retrieves `GET /outages`
+   - Retrieves information from the `GET /site-info/{siteId}` using the `siteId` parameter from the swagger: eg:`norwich-pear-tree`
+   - Filters out any `/outages` that began before `2022-01-01T00:00:00.000Z` or don't have an ID that is in the list of devices in the `/site-info/{siteId}` information
+   - For the remaining outages, it should attach the display `name` of the device in the `/site-info/{siteId}` information to each appropriate `outage`
+   - Sends this list of outages to `POST /site-outages/{siteId}` for the site with the `siteId`parameter in the swagger
 
 If an invalid API Key is inputted, a `403 Forbidden` error response is displayed.
 
